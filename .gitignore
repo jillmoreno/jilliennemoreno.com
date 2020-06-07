@@ -1,0 +1,15 @@
+node_modules
+yarn-error.log
+.npm
+npm-debug.log
+
+# Various temp files
+*.DS_Store
+*.swp
+*.swo
+
+# Jetbrains IDE stuff
+.idea
+
+# Visual Code Studio
+.vscode

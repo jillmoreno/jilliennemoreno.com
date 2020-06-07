@@ -1,0 +1,10 @@
+{
+  "name": "jilliennemoreno.com",
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4
+  }
+}

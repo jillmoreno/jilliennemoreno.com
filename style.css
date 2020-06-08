@@ -17,39 +17,36 @@ nav > ul {
     padding: 0;
     line-height: 30px;
     margin: 0 10px;
+
+    display: flex;
+    width: 100%;
 }
 
 nav > ul > li {
+    flex-grow: 1;
     display: inline-block;
-}
-
-nav > ul > li:after {
-    content: "|";
-    padding: 0 10px;
-}
-
-nav > ul > li:last-child:after {
-    content: "";
-    padding: 0;
+    text-align: center;
 }
 
 main {
     flex-grow: 1;
-    margin: 10px;
 }
 
-#section-1,
-#section-2,
-#section-3,
-#section-4,
-#section-5 {
+nav,
+main {
+    width: 100%;
+    max-width: 980px;
+    margin: 10px auto;
+}
+
+section {
     display: none;
 }
 
-#section-1:target,
-#section-2:target,
-#section-3:target,
-#section-4:target,
-#section-5:target {
+section:target {
     display: block;
+}
+
+p {
+    column-count: 2;
 }

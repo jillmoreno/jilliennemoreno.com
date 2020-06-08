@@ -26,6 +26,7 @@ nav > ul > li {
     flex-grow: 1;
     display: inline-block;
     text-align: center;
+    text-transform: uppercase;
 }
 
 main {
@@ -48,5 +49,10 @@ section:target {
 }
 
 p {
+    margin-top: 0;
+}
+
+.two-columns {
     column-count: 2;
+    column-fill: auto;
 }

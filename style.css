@@ -6,11 +6,13 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #58585a;
 }
 
 header {
-    background-color: #666;
-    color: white;
+    background-color: #f4f2ef;
+    color: #5b4129;
 }
 
 footer {
@@ -41,7 +43,6 @@ main {
     flex-grow: 1;
 }
 
-nav,
 main {
     width: 100%;
     max-width: 980px;
@@ -64,8 +65,12 @@ p {
 }
 
 .header-title {
-    line-height: 50px;
     font-size: 1em;
+}
+
+.header-title .my-name {
+    color: #4779bd;
+    font-size: 16px;
 }
 
 .header-content {
@@ -76,6 +81,11 @@ p {
 .header-content > p {
     margin: 0 20px;
     flex: 1;
+}
+
+.header-content > p::first-letter {
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .footer-social ul {
@@ -133,14 +143,39 @@ p {
 
 /** Tabs **/
 
+nav {
+    margin: 10px 0;
+    border-bottom: 5px solid #4779bd;
+}
+
+.tab-list {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
 .tab {
     background-color: white;
+    line-height: 1em;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 15px 15px 0 0;
+    border-top: 1px solid #4779bd;
+    border-right: 1px solid #4779bd;
+    padding: 0 10px;
+    flex: 1;
+}
+
+.tab:first-child {
+    border-left: 1px solid #4779bd;
 }
 
 .tab a {
     color: #9d8978;
     display: block;
     text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 .tab.selected {

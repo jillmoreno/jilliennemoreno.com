@@ -3,10 +3,43 @@
         <title>Jillienne Moreno</title>
         <link rel="stylesheet" href="style.css" />
         <script type="text/ecmascript">
-            location = location.hash || "#recent-projects";
+            function onLoad() {
+                // Bind event listeners to tab "click" events
+                const tabs = document.getElementsByClassName('tab');
+                for (let i = 0; i < tabs.length; i += 1) {
+                    tabs[i].addEventListener('click', onTabSelect)
+                }
+            }
+
+            function onTabSelect(e) {
+                e.preventDefault()
+
+                // Reset currently selected tab to "not selected"
+                const current = document.getElementsByClassName('selected')[0]
+                if (current) {
+                    current.classList.remove('selected');
+                }
+
+                // Set clicked tab to "selected"
+                const tab = e.target.parentElement;
+                if (tab) {
+                    tab.classList.add('selected')
+                }
+
+                // Show tab content
+                const selected = e.target.attributes.href.textContent;
+                const tabs = document.getElementsByClassName('tab-content')
+                for (let i = 0; i < tabs.length; i += 1) {
+                    tabs[i].classList.remove('selected')
+                    if (`#${tabs[i].id}` === selected) {
+                        tabs[i].classList.add('selected')
+                    }
+                }
+            }
         </script>
     </head>
-    <body>
+
+    <body onload="onLoad()">
         <header>
             <div class="header-wrapper">
                 <h1 class="header-title">
@@ -36,16 +69,26 @@
 
         <nav>
             <ul>
-                <li><a href="#recent-projects">Check out my recent projects</a></li>
-                <li><a href="#ui-ux-process">Take a glimpse at my UI/UX process</a></li>
-                <li><a href="#testimonials">Read testimonials from past team members</a></li>
-                <li><a href="#my-work">See additional examples of my work</a></li>
-                <li><a href="#fun-facts">Find out some other fun facts about me</a></li>
+                <li class="tab selected">
+                    <a href="#recent-projects">Check out my recent projects</a>
+                </li>
+                <li class="tab">
+                    <a href="#ui-ux-process">Take a glimpse at my UI/UX process</a>
+                </li>
+                <li class="tab">
+                    <a href="#testimonials">Read testimonials from past team members</a>
+                </li>
+                <li class="tab">
+                    <a href="#my-work">See additional examples of my work</a>
+                </li>
+                <li class="tab">
+                    <a href="#fun-facts">Find out some other fun facts about me</a>
+                </li>
             </ul>
         </nav>
 
         <main>
-            <section id="recent-projects" class="tab tab-default">
+            <section id="recent-projects" class="tab-content selected">
                 <h2>My Recent Projects</h2>
                 <div class="two-columns">
                     <p>
@@ -86,7 +129,7 @@
                 </ul>
 
                 <figure>
-                    <img src="images/thumbnail_pc-clipart-mac-computer-200193-7354004.jpg" />
+                    <img src="images/thumbnail_pc-clipart-mac-computer-200193-7354004.jpg" alt="example" />
                 </figure>
 
                 <h3>Home Dashboard Features</h3>
@@ -107,7 +150,7 @@
                 </ul>
             </section>
 
-            <section id="ui-ux-process" class="tab">
+            <section id="ui-ux-process" class="tab-content">
                 <h2>Section 2</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in accumsan nisi. Vivamus imperdiet
@@ -128,7 +171,7 @@
                 </p>
             </section>
 
-            <section id="testimonials" class="tab">
+            <section id="testimonials" class="tab-content">
                 <h2>Testimonials</h2>
                 <div class="testimonials">
                     <div class="testimonial">
@@ -186,7 +229,7 @@
                 </div>
             </section>
 
-            <section id="my-work" class="tab">
+            <section id="my-work" class="tab-content">
                 <h2>Section 4</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed urna ac tortor tincidunt euismod non
@@ -208,22 +251,25 @@
                 </p>
             </section>
 
-            <section id="fun-facts" class="tab">
+            <section id="fun-facts" class="tab-content">
                 <h2>Section 5</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum tincidunt euismod. Sed neque
-                    lacus, tempor non rhoncus vel, tristique sed ligula. Suspendisse neque urna, tristique eu convallis
-                    nec, lobortis ac neque. Nulla id arcu nulla. Maecenas luctus, mi sit amet vestibulum sodales, augue
-                    dolor porta neque, vitae commodo turpis leo eget est. Phasellus odio metus, venenatis eget aliquam
-                    eget, tristique sed mauris. Duis bibendum sem id enim euismod venenatis.
-                </p>
-                <p>
-                    Aenean viverra varius felis, eget ornare nisl varius non. Curabitur ultrices placerat ultricies. Nam
-                    efficitur dapibus metus, id convallis neque porttitor at. Quisque vulputate vulputate risus, sed
-                    interdum dolor commodo non. Praesent eu metus a libero egestas dapibus at at sapien. Pellentesque
-                    venenatis dictum justo nec suscipit. Suspendisse potenti. Sed lobortis mattis dolor, quis placerat
-                    diam. Nam quis feugiat dolor, at molestie lacus.
-                </p>
+                <ul class="fun-facts">
+                    <li>In 2012, I thru-hiked the entire 2,200 miles of the Appalachian Trail from Georgia to Maine</li>
+                    <li>
+                        I spent 3 years working for the Cruiseline industry and travelling all over the Caribbean and
+                        Hawaiian islands
+                    </li>
+                    <li>
+                        In college I gained valuable experience with magazine and newspaper production as the Photo
+                        Editor, Cartoon Editor, and Graphic & Layout Editor
+                    </li>
+                    <li>
+                        I'm uniquely certified in Therapeutic Crisis Intervention (TCI), which helps children learn
+                        constructive ways to handle crisis.
+                    </li>
+                    <li>I've enjoyed multiple trekking trips in New Zealand, Chile, Peru, and the United States</li>
+                    <li>Out of 900 associates, I was a manager of the Quarter nominee on four separate occasions</li>
+                </ul>
             </section>
         </main>
 

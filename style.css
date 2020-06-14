@@ -255,6 +255,11 @@ h3 {
 
     padding: 0;
     list-style: none;
+
+    background-image: url("images/earth.svg");
+    background-position: center center;
+    background-size: 50%;
+    background-repeat: no-repeat;
 }
 
 .fun-fact {

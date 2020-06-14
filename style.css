@@ -240,3 +240,59 @@ h3 {
 .testimonial-quote {
     font-style: italic;
 }
+
+/** Fun Facts **/
+
+.fun-fact-list {
+    width: min(100vw, 512px);
+    height: min(100vw, 512px);
+    border-radius: 50%;
+    border-style: dashed;
+    border-width: 3px;
+    border-color: #4779bd;
+    position: relative;
+    margin: 50px auto;
+
+    padding: 0;
+    list-style: none;
+}
+
+.fun-fact {
+    position: absolute;
+    left: calc(50% - 100px);
+
+    background: white;
+    color: #5b4129;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* Bottom Half */
+.fun-fact:nth-child(1) {
+    bottom: calc(50% - 40px);
+    transform: rotate(30deg) translate(min(50vw, 256px)) rotate(-30deg);
+}
+.fun-fact:nth-child(2) {
+    bottom: calc(50% - 40px);
+    transform: rotate(90deg) translate(min(50vw, 256px)) rotate(-90deg);
+}
+.fun-fact:nth-child(3) {
+    bottom: calc(50% - 40px);
+    transform: rotate(150deg) translate(min(50vw, 256px)) rotate(-150deg);
+}
+
+/* Top Half */
+.fun-fact:nth-child(4) {
+    top: calc(50% - 40px);
+    transform: rotate(210deg) translate(min(50vw, 256px)) rotate(-210deg);
+}
+.fun-fact:nth-child(5) {
+    top: calc(50% - 40px);
+    transform: rotate(270deg) translate(min(50vw, 256px)) rotate(-270deg);
+}
+.fun-fact:nth-child(6) {
+    top: calc(50% - 40px);
+    transform: rotate(330deg) translate(min(50vw, 256px)) rotate(-330deg);
+}

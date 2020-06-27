@@ -332,6 +332,51 @@ h3 {
     margin-bottom: 20px;
 }
 
+.ui-ux--persona-list {
+    display: flex;
+}
+
+.ui-ux--persona {
+    flex: 1;
+    margin-left: 20px;
+    color: white;
+    text-align: center;
+    background-color: #939598;
+    padding: 5px 10px 20px 10px;
+}
+
+.ui-ux--persona:first-child {
+    margin-left: 0;
+}
+
+.ui-ux--persona:nth-child(1) {
+    background-color: #9499ba;
+}
+
+.ui-ux--persona:nth-child(2) {
+    background-color: #8dc0ba;
+}
+
+.ui-ux--persona:nth-child(3) {
+    background-color: #6b87a1;
+}
+
+.ui-ux--persona dt {
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-top: 40px;
+
+    background-image: url("https://bestanimations.com/Site/Construction/Construction-16-june.gif");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.ui-ux--persona dd {
+    margin: 0;
+    font-size: 13px;
+}
+
 /** Testimonials **/
 
 .testimonials {

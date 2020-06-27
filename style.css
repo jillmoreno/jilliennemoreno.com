@@ -149,9 +149,18 @@ nav {
     display: flex;
 }
 
-.tab {
+.tab-wrapper {
     display: inline-block;
     text-align: center;
+    flex: 1;
+
+    padding-top: 75px;
+    background-size: 50px;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.tab {
     text-transform: uppercase;
 
     background-color: white;
@@ -161,29 +170,56 @@ nav {
     border-radius: 15px 15px 0 0;
     border-top: 1px solid #4779bd;
     border-right: 1px solid #4779bd;
-    padding: 0 10px;
-    flex: 1;
-}
 
-.tab:first-child {
-    border-left: 1px solid #4779bd;
-}
-
-.tab a {
     color: #9d8978;
     display: block;
     text-decoration: none;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding: 10px 10px 5px 10px;
 }
 
-.tab.selected {
+.tab-wrapper:first-child .tab {
+    border-left: 1px solid #4779bd;
+}
+
+.tab-wrapper.selected .tab {
     background-color: #4779bd;
     color: white;
 }
 
-.tab.selected a {
-    color: white;
+.tab__recent-projects {
+    background-image: url("images/server-outline.svg");
+}
+
+.tab__recent-projects.selected {
+    background-image: url("images/server-sharp.svg");
+}
+
+.tab__ui-ux-process {
+    background-image: url("images/git-compare-outline.svg");
+}
+
+.tab__ui-ux-process.selected {
+    background-image: url("images/git-compare-sharp.svg");
+}
+
+.tab__testimonials {
+    background-image: url("images/chatbubbles-outline.svg");
+}
+
+.tab__testimonials.selected {
+    background-image: url("images/chatbubbles-sharp.svg");
+}
+
+.tab__my-work {
+    background-image: url("images/folder-outline.svg");
+}
+
+.tab__my-work.selected {
+    background-image: url("images/folder-sharp.svg");
+}
+
+.tab__fun-facts {
+    background-image: url("images/finger-print-outline.svg");
 }
 
 .tab-content {

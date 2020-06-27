@@ -23,11 +23,6 @@ p {
 
 /** Header **/
 
-header {
-    background-color: #f4f2ef;
-    color: #5b4129;
-}
-
 .header-wrapper {
     width: 100%;
     max-width: 992px;
@@ -35,18 +30,51 @@ header {
 }
 
 .header-title {
-    font-size: 1em;
+    background-color: #a3bcde;
+    color: #5a4028;
+    display: block;
+    max-width: 500px;
+    min-height: 100px;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 15px 25px 25px 25px;
+    font-size: 18px;
+    font-weight: 400;
+
+    position: relative;
+}
+
+.header-title:after {
+    content: "";
+    display: inline-block;
+    background-image: url("images/jill-hello.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 209px;
+
+    position: absolute;
+    top: 0;
+    right: -209px;
 }
 
 .header-title .my-name {
-    color: #4779bd;
-    font-size: 16px;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .header-content {
     display: flex;
     margin-bottom: 30px;
     flex-direction: column;
+
+    background-color: #f4f2ee;
+    color: #5b4129;
+    padding: 25px;
+    border-radius: 10px;
 }
 
 .header-content > p {

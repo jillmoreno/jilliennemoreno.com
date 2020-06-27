@@ -222,6 +222,10 @@ nav {
     background-image: url("images/finger-print-outline.svg");
 }
 
+.tab__fun-facts.selected {
+    background-image: url("images/finger-print-sharp.svg");
+}
+
 .tab-content {
     display: none;
 }

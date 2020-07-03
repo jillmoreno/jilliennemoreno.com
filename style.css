@@ -26,24 +26,37 @@ p {
 .header-wrapper {
     width: 100%;
     max-width: 992px;
-    margin: 10px auto;
+    margin: 25px auto -125px auto; 
 }
 
 .header-title {
-    background-color: #a3bcde;
-    color: #5a4028;
+    background-color: #05223b;
+    color: white;
     display: block;
-    max-width: 500px;
+    max-width: 700px;
     min-height: 100px;
     border-radius: 10px;
-    margin: 50px auto;
-    padding: 15px 25px 25px 25px;
+    margin: 35px auto;
+    padding: 15px 25px 25px 150px;
     font-size: 18px;
     font-weight: 400;
 
     position: relative;
 }
 
+.profile-picture {
+    position: relative;
+    top: -200;
+    right: -120;
+    width: 125;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: medium;
+    
+    
+}
+
+//
 .header-title:after {
     content: "";
     display: inline-block;
@@ -60,10 +73,12 @@ p {
 
 .header-title .my-name {
     color: white;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 45px;
+    font-weight: 500;
     margin-left: 10px;
     margin-right: 10px;
+    font-family: fantasy;
+    
 }
 
 .header-content {
@@ -72,7 +87,7 @@ p {
     flex-direction: column;
 
     background-color: #f4f2ee;
-    color: #5b4129;
+    color: #05223b;
     padding: 25px;
     border-radius: 10px;
 }
@@ -92,6 +107,7 @@ p {
     font-size: 18px;
     font-weight: 600;
 }
+
 
 /** Footer **/
 
@@ -163,15 +179,15 @@ nav {
 .tab {
     text-transform: uppercase;
 
-    background-color: white;
+    background-color: 05223b;
     line-height: 1em;
     font-weight: 600;
     font-size: 14px;
     border-radius: 15px 15px 0 0;
-    border-top: 1px solid #4779bd;
-    border-right: 1px solid #4779bd;
+    border-top: 2px solid #9b7f65;
+    border-right: 2px solid #9b7f65;
 
-    color: #9d8978;
+    color: #9b7f65;
     display: block;
     text-decoration: none;
     padding: 10px 10px 5px 10px;
@@ -182,8 +198,8 @@ nav {
 }
 
 .tab-wrapper.selected .tab {
-    background-color: #4779bd;
-    color: white;
+    background-color: white;
+    color: 05223b;
 }
 
 .tab__recent-projects {
@@ -244,17 +260,20 @@ main {
 }
 
 h2 {
-    color: #9499ba;
+    color: #05223b;
     text-transform: uppercase;
     text-align: center;
 }
 
 h3 {
-    color: #9499ba;
+    color: #05223b;
+    margin-top: 50px;
+    
 }
 
 .screenshot {
     width: 100%;
+    margin-bottom: 40px;
 }
 
 @media (min-width: 512px) {
@@ -266,7 +285,7 @@ h3 {
 
 .project-roles,
 .dashboard-features {
-    color: #9d8978;
+    color: #723d46;
     font-weight: 600;
     line-height: 3em;
 }
@@ -274,7 +293,7 @@ h3 {
 /** My UI/UX Process **/
 
 #ui-ux-process h3 {
-    color: #fdc689;
+    color: #723d46;
     font-size: 20px;
     font-weight: 400;
     margin-top: 60px;
@@ -283,7 +302,7 @@ h3 {
 
 #ui-ux-process h3:before {
     color: white;
-    background-color: #fdc689;
+    background-color: #723d46;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -315,7 +334,7 @@ h3 {
 }
 
 .ui-ux--quote {
-    color: #8dc0ba;
+    color: #55828b;
     font-size: 16px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -328,7 +347,7 @@ h3 {
 }
 
 .ui-ux--feature-requests li {
-    color: #9499ba;
+    color: #55828b;
     margin-bottom: 20px;
 }
 
@@ -341,7 +360,7 @@ h3 {
     margin-left: 20px;
     color: white;
     text-align: center;
-    background-color: #939598;
+    background-color: #55828b;
     padding: 5px 10px 20px 10px;
 }
 
@@ -354,7 +373,7 @@ h3 {
 }
 
 .ui-ux--persona:nth-child(2) {
-    background-color: #8dc0ba;
+    background-color: #646069;
 }
 
 .ui-ux--persona:nth-child(3) {
@@ -461,28 +480,34 @@ h3 {
 .fun-fact:nth-child(1) {
     bottom: calc(50% - 40px);
     transform: rotate(30deg) translate(min(50vw, 256px)) rotate(-30deg);
+    color: #723d46;
 }
 .fun-fact:nth-child(2) {
     bottom: calc(50% - 40px);
     transform: rotate(90deg) translate(min(50vw, 256px)) rotate(-90deg);
+    color: #55828b;
 }
 .fun-fact:nth-child(3) {
     bottom: calc(50% - 40px);
     transform: rotate(150deg) translate(min(50vw, 256px)) rotate(-150deg);
+    color: #9b7f65;
 }
 
 /* Top Half */
 .fun-fact:nth-child(4) {
     top: calc(50% - 40px);
     transform: rotate(210deg) translate(min(50vw, 256px)) rotate(-210deg);
+    color: #723d46;
 }
 .fun-fact:nth-child(5) {
     top: calc(50% - 40px);
     transform: rotate(270deg) translate(min(50vw, 256px)) rotate(-270deg);
+    color: #55828b;
 }
 .fun-fact:nth-child(6) {
     top: calc(50% - 40px);
     transform: rotate(330deg) translate(min(50vw, 256px)) rotate(-330deg);
+    color: #9b7f65;
 }
 
 /** Construction Styles **/

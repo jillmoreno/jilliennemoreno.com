@@ -28,13 +28,12 @@ header {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: auto;
-    
 }
 
 .header-wrapper {
     width: 100%;
     max-width: 992px;
-    margin: 25px auto -125px auto; 
+    margin: 25px auto -125px auto;
 }
 
 .header-title {
@@ -57,13 +56,11 @@ header {
     position: relative;
     top: -150;
     right: -170;
-    width: 100;    
+    width: 100;
     height: auto;
     border-style: groove;
     border-color: whitesmoke;
     border-width: medium;
-    
-    
 }
 
 //
@@ -88,7 +85,6 @@ header {
     margin-left: 10px;
     margin-right: 10px;
     font-family: fantasy;
-    
 }
 
 .header-content {
@@ -117,7 +113,6 @@ header {
     font-size: 18px;
     font-weight: 600;
 }
-
 
 /** Footer **/
 
@@ -273,8 +268,7 @@ h2 {
 h3 {
     color: #032d3e;
     margin-top: 50px;
-    text-align: center
-    
+    text-align: center;
 }
 
 .screenshot {
@@ -402,7 +396,6 @@ h3 {
     font-size: 13px;
 }
 
-
 /** Testimonials **/
 
 .testimonials {
@@ -451,61 +444,50 @@ h3 {
     font-style: italic;
 }
 
-
 /** Additional Work **/
 
-.logo {
-    position: relative;
-    margin-top: 10px;
+.work-wrapper {
     margin-bottom: 50px;
-    padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .work-wrapper {
+        display: flex;
+    }
+}
+
+.logo {
+    margin: 0 auto 20px auto;
     height: 200px;
     width: 200px;
-    
+}
+
+@media (min-width: 768px) {
+    .logo {
+        margin: 0;
     }
+}
 
 .logo img {
     opacity: 0.9;
-    transform: scale(1.15); 
-    transition: transform 0.5s, opacity 0.5s;
-    }
-
+}
 
 .logo img:hover {
     opacity: 1;
-    transform: scale(1.03);
+    transform: scale(0.9);
+    transition: transform 0.5s, opacity 0.5s;
 }
 
-.column2 {
-    align-content: center;
-    vertical-align: middle;
-    align-items: center;
-    text-align: left;
-    width: 100%;
-    padding-left: 280px;
-    height: 200px;
-    margin-bottom: 50px;
-    
-    
+.work-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
 }
 
-.column {
-  float: left;
-  width: 30%;
-  padding-bottom: 20px;
-  height: 200px;
-  align-items: center;
-  vertical-align: middle;
-    
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    
-    }
-
-
-
+.work-text-wrapper p {
+    padding-left: 20px;
+}
 
 /** Fun Facts **/
 

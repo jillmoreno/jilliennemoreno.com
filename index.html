@@ -36,40 +36,6 @@
                         tabs[i].classList.add('selected')
                     }
                 }
-
-                var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-                
-                
-                
-                
-
             }
         </script>
     </head>
@@ -77,36 +43,50 @@ function showSlides(n) {
     <body onload="onLoad()">
         <header>
             <div class="header-wrapper">
-                <div class="header-image">
-                    <img src="images/Jill.png" alt="Jillienne Moreno Profile Picture" class="profile-picture" />
-                </div>
                 <h1 class="header-title">
-                    Hello! My name is <span class="my-name">Jillienne Moreno.</span> <br />I'm a UI/UX Designer based in
-                    Western North Carolina with experience in delivering start-to-finish design for software products,
-                    and I'm searching for my next exciting project.
+                    Hello! My name is <span class="my-name">Jillienne Moreno,</span> and I would love to tell you a
+                    little bit about myself and how my path has brought me to UI/UX Design
                 </h1>
+                <div class="header-content">
+                    <p>
+                        Both my professional and personal experiences have molded me into the artist that exists today.
+                        Though I started out in print production, illustrations, and packaging design, my travels around
+                        the world introduced me to the love of hospitality management.
+                    </p>
+                    <p>
+                        I enjoy meeting new people and I care about making any employment opportunity a learning and
+                        growing experience. It did not take long for the creative side of me to embrace any chance to
+                        come out and play.
+                    </p>
+                    <p>
+                        Whether it was designing brochures and marketing materials for a small motel in New Zealand,
+                        creating promotional boards for excursions on a cruise ship, or enhancing the day-to-day
+                        management tools at a private club in Key Largo, there was always an idea on how I can use my
+                        graphic design skills to improve the experience at every stop along my journey.
+                    </p>
+                </div>
             </div>
-
-            <nav>
-                <ul class="tab-list">
-                    <li class="tab-wrapper tab__recent-projects selected">
-                        <a href="#recent-projects" class="tab">Check out my recent projects</a>
-                    </li>
-                    <li class="tab-wrapper tab__ui-ux-process">
-                        <a href="#ui-ux-process" class="tab">Take a glimpse at my UI/UX process</a>
-                    </li>
-                    <li class="tab-wrapper tab__testimonials">
-                        <a href="#testimonials" class="tab">Read testimonials from team members</a>
-                    </li>
-                    <li class="tab-wrapper tab__my-work">
-                        <a href="#my-work" class="tab">See additional examples of my work</a>
-                    </li>
-                    <li class="tab-wrapper tab__about-me">
-                        <a href="#about-me" class="tab">Find out a little bit more about me</a>
-                    </li>
-                </ul>
-            </nav>
         </header>
+
+        <nav>
+            <ul class="tab-list">
+                <li class="tab-wrapper tab__recent-projects selected">
+                    <a href="#recent-projects" class="tab">Check out my recent projects</a>
+                </li>
+                <li class="tab-wrapper tab__ui-ux-process">
+                    <a href="#ui-ux-process" class="tab">Take a glimpse at my UI/UX process</a>
+                </li>
+                <li class="tab-wrapper tab__testimonials">
+                    <a href="#testimonials" class="tab">Read testimonials from team members</a>
+                </li>
+                <li class="tab-wrapper tab__my-work">
+                    <a href="#my-work" class="tab">See additional examples of my work</a>
+                </li>
+                <li class="tab-wrapper tab__fun-facts">
+                    <a href="#fun-facts" class="tab">Find out some other fun facts about me</a>
+                </li>
+            </ul>
+        </nav>
 
         <main>
             <section id="recent-projects" class="tab-content selected">
@@ -134,7 +114,7 @@ function showSlides(n) {
                 </div>
 
                 <h3>
-                    The Project Role included the business analysis, project <br /> management, and UI/UX designs in the
+                    The Project Role included the business analysis, project management, and UI/UX designs in the
                     following areas:
                 </h3>
 
@@ -150,12 +130,14 @@ function showSlides(n) {
                 </ul>
 
                 <figure>
-                      <h2> Desktop </h2>
-                    <img src="images/Desktop-Icon.png" alt="Desktop Icon" Class="icon" />
-                    <img src="images/Desktop.png" alt="Example screenshot of Desktop" class="screenshot" />
+                    <img
+                        src="images/DesktopFinalImage.svg"
+                        alt="Example screenshot of a recent project"
+                        class="screenshot"
+                    />
                 </figure>
 
-                <h3>Home Dashboard Features</h3>
+                <h2>Home Dashboard Features</h2>
 
                 <ul class="two-columns dashboard-features">
                     <li>Drag and Drop Widget & Tile Functionality</li>
@@ -171,44 +153,6 @@ function showSlides(n) {
                     <li>Ability to Search all Records/Accounts</li>
                     <li>User's Personal To Do List</li>
                 </ul>
-                <figure>
-                      <h2> mobile </h2>
-                    <img src="images/IphoneIcon.png" alt="iphone Icon" Class="icon" />
-                    <img src="images/iphone.png" alt="Example screenshot of iphone" class="screenshot" />
-                </figure>
-
-                <h3>iPhone Features</h3>
-
-                <ul class="two-columns dashboard-features">
-                    <li>Amenities Information</li>
-                    <li>Reservation Management</li>
-                    <li>Online Restaurant Orders</li>
-                    <li>Account Notifications</li>
-                    <li>Special Events & Calendar Management</li>
-                    <li>Member Profile & User Management</li>
-                    <li>Account Balance Summary</li>
-                    <li>Transaction & Statement Details</li>
-                    
-                </ul>
-                <figure>
-                      <h2> ios tablet </h2>
-                    <img src="images/ipad-icon.png" alt="ipad Icon" Class="icon" />
-                    <img src="images/Ipad.png" alt="Example screenshot of ipad" class="screenshot" />
-                </figure>
-
-                <h3>Home Dashboard Features</h3>
-
-                <ul class="two-columns dashboard-features">
-                    <li>Home Dashboard</li>
-                    <li>Advanced Account Lookup</li>
-                    <li>Transaction Details</li>
-                    <li>Reservation Management</li>
-                    <li>Table Management</li>
-                    <li>Inventory Management</li>
-                    <li>Recipe Builder & Kitchen Management</li>
-                    <li>Settings & System Administration</li>
-                    
-                </ul>
             </section>
 
             <section id="ui-ux-process" class="tab-content">
@@ -223,7 +167,7 @@ function showSlides(n) {
 
                 <blockquote class="ui-ux--quote">
                     As a User, I need to be able to quickly search for a Member record (or any other type of person
-                    record, employee, associate, group, etc) and be able to view a quick summary of that record.
+                    record, employee, associate, group, etc) and be able to view a quick summary of that record
                 </blockquote>
 
                 <p>
@@ -231,13 +175,7 @@ function showSlides(n) {
                     record:
                 </p>
 
-                <figure>
-                    <img
-                        src="images/T2-Image-1.png"
-                        alt="Example screenshot of previous Member Lookup screen used"
-                        class="screenshot"
-                    />
-                </figure>
+                <div class="placeholder"></div>
 
                 <p>Users have requested the following information to be included in their Member Lookup search:</p>
 
@@ -286,7 +224,7 @@ function showSlides(n) {
                     </div>
 
                     <div class="ui-ux--persona">
-                        <dt>Membership Agent</dt>
+                        <dt>Restaurant Server</dt>
                         <dd>To ensure that a membership type has been added and basic contact info is updated</dd>
                     </div>
                 </dl>
@@ -299,23 +237,13 @@ function showSlides(n) {
 
                 <h3 class="ui-ux--3">Designing User Flows and Wireframes</h3>
 
-                <figure>
-                    <img src="images/T2-Image2.png" alt="Example screenshot of User Flow" class="screenshot" />
-                </figure>
+                <div class="placeholder"></div>
 
-                <figure>
-                    <img src="images/T2-Image-3.png" alt="Example screenshot of Wireframe" class="screenshot" />
-                </figure>
+                <div class="placeholder"></div>
 
                 <h3 class="ui-ux--4">Creating Prototypes</h3>
 
-                <div class="fadein">
-                    <img src="images/T2-Proto1.png" />
-                    <img src="images/T2-Proto2.png" />
-                    <img src="images/T2-Proto3.png" />
-                    <img src="images/T2-Proto-4.png" />
-                    <img src="images/T2-Proto5.png" />
-                </div>
+                <div class="placeholder"></div>
 
                 <h3 class="ui-ux--5">Conduct User Testing & Secondary Iterations</h3>
 
@@ -324,13 +252,7 @@ function showSlides(n) {
                     iteration:
                 </p>
 
-                <figure>
-                    <img
-                        src="images/T2-Image-4.png"
-                        alt="Example screenshot of Quick View Modal with Seconadary iteration changes"
-                        class="screenshot"
-                    />
-                </figure>
+                <div class="placeholder"></div>
             </section>
 
             <section id="testimonials" class="tab-content">
@@ -352,7 +274,7 @@ function showSlides(n) {
                         </div>
                         <div class="testimonial-quote">
                             <p>
-                                I have worked with Jillienne for almost 4 years and she has always been meticulous with
+                                I have worked with Jillienne for almost 4 years and he has always been meticulous with
                                 the design specifications for each of the user stories that we worked on. She is very
                                 versatile, from designing, quality assurance, to project management. She always comes up
                                 with beautiful UI workflows even from arduous business processes that we were trying to
@@ -420,276 +342,53 @@ function showSlides(n) {
             </section>
 
             <section id="my-work" class="tab-content">
-                <h2>Additional Work</h2>
+                <h2>Section 4</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed urna ac tortor tincidunt euismod non
+                    semper diam. Phasellus semper ante eget viverra aliquam. Curabitur egestas orci nec volutpat
+                    vestibulum. Maecenas id tincidunt sem. Quisque aliquam euismod ullamcorper. Nullam vel urna urna.
+                    Fusce sodales turpis vitae vestibulum dignissim. Quisque dignissim pellentesque pellentesque. Etiam
+                    auctor velit mi, ac porttitor nisl sagittis id. Curabitur convallis nec odio in suscipit.
+                    Suspendisse mi lorem, eleifend a ullamcorper at, tristique a odio. Suspendisse viverra est sem, vel
+                    viverra nisi accumsan in. Cras iaculis mauris vitae rhoncus euismod. Donec sed posuere velit.
+                    Praesent vitae ullamcorper quam. Fusce ac ligula at libero condimentum tempor.
+                </p>
 
-                <div class="work-wrapper">
-                    <div class="logo">
-                        <img src= images/Encompasslogoblue.png alt="Encompass Logo" class=logo>
-                                       
-                    </div>
+                <div class="placeholder"></div>
 
-                    <div class="work-text-wrapper">
-                        <p>
-                            In the course of 5 years, I was responsible for the UI/UX designs of more than 30 different
-                            systems that were developed and "Encompassed" within one software application.
-                            <br />&nbsp;<br />These systems included Accounts Receivable & Payable, Membership,
-                            Purchasing & Procurement, Property Certificate, Capital Project Management, Vendor &
-                            Inventory Management, Task & Automated Workflow Management, System Administration, Security
-                            Roles, User Permissions, Basic Notifications, and Task Management.
-                        </p>
-                    </div>
-                </div>
-              
-                
-<div class="slideshow-container">
-
-  <div class="mySlides fade">
-    <img src="images/encompass/procurement%20dash.png" style="width:100%">
-    <div class="text">Procurement Dashboard</div>
-  </div>
-
-  <div class="mySlides fade">
-    <img src="images/encompass/PO.gif" style="width:100%">
-    <div class="text">Purchase Order</div>
-  </div>
-
-  <div class="mySlides fade">
-    <img src="images/encompass/procurement%20dash.png" style="width:100%">
-    <div class="text">Add New Inventory Item</div>
-  </div>
-    
-    <div class="mySlides fade">
-    <img src="images/encompass/Req.png" style="width:100%">
-    <div class="text">Add New Requisition</div>
-  </div>
-
-  <div class="mySlides fade">
-    <img src="images/encompass/Task.png" style="width:100%">
-    <div class="text">Task Modal</div>
-  </div>
-    
-    <div class="mySlides fade">
-    <img src="images/encompass/workflow%20setup.gif" style="width:100%">
-    <div class="text">Task Workflow Setup</div>
-  </div>
-    
-    <div class="mySlides fade">
-    <img src="images/encompass/table-mgmt.png" style="width:100%">
-    <div class="text">Table Management for Tablet</div>
-  </div>
-    
-    
-    
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>    
-  <span class="dot" onclick="currentSlide(7)"></span>    
-</div>
-                
-                
-                
-                
-                
-                
-                
-             
-                           
-           
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-
-                <div class="work-wrapper">
-                    <div class="logo">
-                        <img src= images/LMMFG.png alt="Lake Matheson Motel Logo" class=logo>
-                    </div>
-
-                    <div class="work-text-wrapper">
-                        <p>
-                            During a year spent abroad in New Zealand, I used my expertise to redesign the promortional
-                            materials used for a local motel in the small township of Fox Glacier. <br />&nbsp;<br />
-                            This included business cards, brochures placed in tourism locations, and a revamped website.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="work-wrapper">
-                    <div class="logo">
-                        <img src= images/thirdfrate.png alt="Third Frate Logo" class=logo>
-                    </div>
-
-                    <div class="work-text-wrapper">
-                        <p>
-                            Third Frate is a local band that was seeking promotional materials that emphasized them as a
-                            cover band to acquire more gigs in the surrounding communities. <br />&nbsp;<br />
-                            This included fliers that featured interviews with the individual band members and an
-                            example of the music the band covered.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="work-wrapper">
-                    <div class="logo">
-                        <img src= images/SF.png alt="Specialty Finishing Logo" class=logo>
-                    </div>
-
-                    <div class="work-text-wrapper">
-                        <p>
-                            During my time spent at Specialty Finishing, my tasks included creating, modifying, editing,
-                            and proofreading designs, files and packaging for print production. <br />&nbsp;<br />
-                            I was also instructed on the ins and outs of preparing files for print production and
-                            assisting with plate production in CMYK distributions.
-                        </p>
-                    </div>
-                </div>
+                <p>
+                    Nullam sed erat imperdiet, volutpat ipsum id, malesuada dui. In eget purus in velit condimentum
+                    ultricies. Pellentesque sem felis, laoreet et consectetur in, convallis id nibh. Curabitur pharetra
+                    viverra lorem, quis interdum erat rhoncus vitae. Vestibulum id ligula ut nisi molestie tincidunt.
+                    Aenean congue lectus vitae quam porttitor condimentum. In mattis tempus accumsan. Sed justo ante,
+                    tempus nec erat non, dignissim eleifend metus. Proin interdum vitae metus quis dignissim. Fusce
+                    pretium eget leo vitae consectetur. Praesent at iaculis odio, non porta libero.
+                </p>
             </section>
 
-            <section id="about-me" class="tab-content">
-                <h2>a little about me . . .</h2>
-                <p>
-                    I would love to tell you a little bit about myself and how my path has brought me to UI/UX Design.
-                </p>
-                <p>
-                    Both my professional and personal experiences have molded me into the artist that exists today.
-                    Though I started out in print production, illustrations and packaging design, my travels around the
-                    world introduced me to the love of hospitality management.
-                </p>
-                <p>
-                    I enjoy meeting new people and I care about making any employment opportunity a learning and growing
-                    experience. It did not take long for the creative side of me to embrace any chance to come out and
-                    play.
-                </p>
-                <p>
-                    Whether it was designing brochures and marketing materials for a small motel in New Zealand,
-                    creating promotional boards for excursions on a cruise ship, or enhancing the day-to-day management
-                    tools at a private club in Key Largo, there was always an idea on how I can use my graphic design
-                    skills to improve the experience at every stop along my journey.
-                </p>
-
+            <section id="fun-facts" class="tab-content">
                 <h2>Fun Facts</h2>
                 <ul class="fun-fact-list">
                     <li class="fun-fact">
-                        In 2012, I thru-hiked the entire 2,200 miles of the Appalachian Trail from Georgia to Maine.
+                        In 2012, I thru-hiked the entire 2,200 miles of the Appalachian Trail from Georgia to Maine
                     </li>
                     <li class="fun-fact">
                         I spent 3 years working for the Cruiseline industry and travelling all over the Caribbean and
-                        Hawaiian islands.
+                        Hawaiian islands
                     </li>
                     <li class="fun-fact">
                         In college I gained valuable experience with magazine and newspaper production as the Photo
-                        Editor, Cartoon Editor, and Graphic & Layout Editor.
+                        Editor, Cartoon Editor, and Graphic & Layout Editor
                     </li>
                     <li class="fun-fact">
                         I'm uniquely certified in Therapeutic Crisis Intervention (TCI), which helps children learn
                         constructive ways to handle crisis.
                     </li>
                     <li class="fun-fact">
-                        I've enjoyed multiple trekking trips in New Zealand, Chile, Peru, and the United States.
+                        I've enjoyed multiple trekking trips in New Zealand, Chile, Peru, and the United States
                     </li>
                     <li class="fun-fact">
-                        Out of 900 associates, I was a manager of the Quarter nominee on four separate occasions.
+                        Out of 900 associates, I was a manager of the Quarter nominee on four separate occasions
                     </li>
                 </ul>
             </section>

@@ -361,17 +361,13 @@ h3 {
     display: flex;
 }
 
-.testimonial {
+.testimonial,
+.testimonial-wrapper {
     flex: 1;
-    margin-right: 20px;
 }
 
-.testimonial:nth-child(odd) {
-    margin-right: 10px;
-}
-
-.testimonial:nth-child(even) {
-    margin-left: 15px;
+.testimonial-wrapper {
+    margin-left: 20px;
 }
 
 .testimonial-header {

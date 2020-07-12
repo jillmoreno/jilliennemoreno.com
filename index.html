@@ -3,6 +3,7 @@
         <title>Jillienne Moreno</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="style.css" />
+
         <script type="text/ecmascript">
             function onLoad() {
                 // Bind event listeners to tab "click" events
@@ -11,7 +12,9 @@
                     tabs[i].addEventListener('click', onTabSelect)
                 }
             }
+        </script>
 
+        <script type="text/ecmascript">
             function onTabSelect(e) {
                 e.preventDefault()
 
@@ -36,40 +39,56 @@
                         tabs[i].classList.add('selected')
                     }
                 }
+            }
+        </script>
 
-                var slideIndex = 1;
-showSlides(slideIndex);
+        <script type="text/ecmascript">
+            let slideIndex = {
+                encompass: 0,
+            };
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+            // Next/previous controls
+            function plusSlides(name, n) {
+                slideIndex[name] += n;
+                showSlide(name, slideIndex[name]);
+            }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+            // Thumbnail image controls
+            function currentSlide(name, n) {
+                slideIndex[name] = n;
+                showSlide(name, slideIndex[name]);
+            }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-                
-                
-                
-                
+            function showSlide(name, n) {
+              var slides = document.getElementsByClassName(`slideshow-${name}--slide`);
+              var dots = document.getElementsByClassName(`slideshow-${name}--dot`);
 
+
+              // Wrap around to the beginning
+              if (n >= slides.length) {
+                  slideIndex[name] = 0;
+              }
+
+              // Wrap around to the end
+              if (n < 0) {
+                  slideIndex[name] = slides.length - 1;
+              }
+
+              // Set the selected slide to "active", remove "active" from other slides
+              for (let i = 0; i < slides.length; i+= 1) {
+                  slides[i].classList.remove('active');
+                  if (i === n) {
+                      slides[i].classList.add('active')
+                  }
+              }
+
+                // Set the selected dot to "active", remove "active" from other dots
+                for (let i = 0; i < dots.length; i+= 1) {
+                    dots[i].classList.remove('active');
+                    if (i === n) {
+                        dots[i].classList.add('active')
+                    }
+                }
             }
         </script>
     </head>
@@ -134,8 +153,8 @@ function showSlides(n) {
                 </div>
 
                 <h3>
-                    The Project Role included the business analysis, project <br /> management, and UI/UX designs in the
-                    following areas:
+                    The Project Role included the business analysis, project <br />
+                    management, and UI/UX designs in the following areas:
                 </h3>
 
                 <ul class="two-columns project-roles">
@@ -150,8 +169,8 @@ function showSlides(n) {
                 </ul>
 
                 <figure>
-                      <h2> Desktop </h2>
-                    <img src="images/Desktop-Icon.png" alt="Desktop Icon" Class="icon" />
+                    <h2>Desktop</h2>
+                    <img src="images/Desktop-Icon.png" alt="Desktop Icon" class="icon" />
                     <img src="images/Desktop.png" alt="Example screenshot of Desktop" class="screenshot" />
                 </figure>
 
@@ -172,8 +191,8 @@ function showSlides(n) {
                     <li>User's Personal To Do List</li>
                 </ul>
                 <figure>
-                      <h2> mobile </h2>
-                    <img src="images/IphoneIcon.png" alt="iphone Icon" Class="icon" />
+                    <h2>mobile</h2>
+                    <img src="images/IphoneIcon.png" alt="iphone Icon" class="icon" />
                     <img src="images/iphone.png" alt="Example screenshot of iphone" class="screenshot" />
                 </figure>
 
@@ -188,11 +207,10 @@ function showSlides(n) {
                     <li>Member Profile & User Management</li>
                     <li>Account Balance Summary</li>
                     <li>Transaction & Statement Details</li>
-                    
                 </ul>
                 <figure>
-                      <h2> ios tablet </h2>
-                    <img src="images/ipad-icon.png" alt="ipad Icon" Class="icon" />
+                    <h2>ios tablet</h2>
+                    <img src="images/ipad-icon.png" alt="ipad Icon" class="icon" />
                     <img src="images/Ipad.png" alt="Example screenshot of ipad" class="screenshot" />
                 </figure>
 
@@ -207,7 +225,6 @@ function showSlides(n) {
                     <li>Inventory Management</li>
                     <li>Recipe Builder & Kitchen Management</li>
                     <li>Settings & System Administration</li>
-                    
                 </ul>
             </section>
 
@@ -427,7 +444,6 @@ function showSlides(n) {
                 <div class="work-wrapper">
                     <div class="logo">
                         <img src= images/Encompasslogoblue.png alt="Encompass Logo" class=logo>
-                                       
                     </div>
 
                     <div class="work-text-wrapper">
@@ -441,167 +457,59 @@ function showSlides(n) {
                         </p>
                     </div>
                 </div>
-              
-                
-<div class="slideshow-container">
 
-  <div class="mySlides fade">
-    <img src="images/encompass/procurement%20dash.png" style="width:100%">
-    <div class="text">Procurement Dashboard</div>
-  </div>
+                <div class="slideshow-container">
+                    <div class="slideshow-encompass--slide slideshow-slide fade active">
+                        <img src="images/encompass/procurement%20dash.png" style="width: 100%;" />
+                        <div class="slideshow-text">Procurement Dashboard</div>
+                    </div>
 
-  <div class="mySlides fade">
-    <img src="images/encompass/PO.gif" style="width:100%">
-    <div class="text">Purchase Order</div>
-  </div>
+                    <div class="slideshow-encompass--slide slideshow-slide fade">
+                        <img src="images/encompass/PO.gif" style="width: 100%;" />
+                        <div class="slideshow-text">Purchase Order</div>
+                    </div>
 
-  <div class="mySlides fade">
-    <img src="images/encompass/procurement%20dash.png" style="width:100%">
-    <div class="text">Add New Inventory Item</div>
-  </div>
-    
-    <div class="mySlides fade">
-    <img src="images/encompass/Req.png" style="width:100%">
-    <div class="text">Add New Requisition</div>
-  </div>
+                    <div class="slideshow-encompass--slide slideshow-slide fade">
+                        <img src="images/encompass/procurement%20dash.png" style="width: 100%;" />
+                        <div class="slideshow-text">Add New Inventory Item</div>
+                    </div>
 
-  <div class="mySlides fade">
-    <img src="images/encompass/Task.png" style="width:100%">
-    <div class="text">Task Modal</div>
-  </div>
-    
-    <div class="mySlides fade">
-    <img src="images/encompass/workflow%20setup.gif" style="width:100%">
-    <div class="text">Task Workflow Setup</div>
-  </div>
-    
-    <div class="mySlides fade">
-    <img src="images/encompass/table-mgmt.png" style="width:100%">
-    <div class="text">Table Management for Tablet</div>
-  </div>
-    
-    
-    
+                    <div class="slideshow-encompass--slide slideshow-slide fade">
+                        <img src="images/encompass/Req.png" style="width: 100%;" />
+                        <div class="slideshow-text">Add New Requisition</div>
+                    </div>
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
+                    <div class="slideshow-encompass--slide slideshow-slide fade">
+                        <img src="images/encompass/Task.png" style="width: 100%;" />
+                        <div class="slideshow-text">Task Modal</div>
+                    </div>
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>    
-  <span class="dot" onclick="currentSlide(7)"></span>    
-</div>
-                
-                
-                
-                
-                
-                
-                
-             
-                           
-           
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                    <div class="slideshow-encompass--slide slideshow-slide fade">
+                        <img src="images/encompass/workflow%20setup.gif" style="width: 100%;" />
+                        <div class="slideshow-text">Task Workflow Setup</div>
+                    </div>
+
+                    <div class="slideshow-encompass--slide slideshow-slide fade">
+                        <img src="images/encompass/table-mgmt.png" style="width: 100%;" />
+                        <div class="slideshow-text">Table Management for Tablet</div>
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="slideshow-prev" onclick="plusSlides('encompass', -1)">&#10094;</a>
+                    <a class="slideshow-next" onclick="plusSlides('encompass', 1)">&#10095;</a>
+                </div>
+                <br />
+
+                <!-- The dots/circles -->
+                <div class="slideshow-dots">
+                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(1)"></span>
+                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(2)"></span>
+                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(3)"></span>
+                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(4)"></span>
+                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(5)"></span>
+                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(6)"></span>
+                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(7)"></span>
+                </div>
 
                 <div class="work-wrapper">
                     <div class="logo">

@@ -80,18 +80,14 @@
               // Set the selected slide to "active", remove "active" from other slides
               for (let i = 0; i < slides.length; i+= 1) {
                   slides[i].classList.remove('active');
-                  if (i === n) {
-                      slides[i].classList.add('active')
-                  }
               }
+              slides[slideIndex[name]].classList.add('active')
 
                 // Set the selected dot to "active", remove "active" from other dots
                 for (let i = 0; i < dots.length; i+= 1) {
                     dots[i].classList.remove('active');
-                    if (i === n) {
-                        dots[i].classList.add('active')
-                    }
                 }
+                dots[slideIndex[name]].classList.add('active')
             }
         </script>
     </head>
@@ -521,17 +517,17 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(1)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(2)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(3)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(4)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(5)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(6)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(7)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(8)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(9)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(10)"></span>
-                    <span class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide(11)"></span>
+                    <button class="slideshow-encompass--dot slideshow-dot active" onclick="currentSlide('encompass', 0)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 1)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 2)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 3)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 4)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 5)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 6)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 7)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 8)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 9)"></button>
+                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 10)"></button>
                 </div>
 
                 <div class="work-wrapper">
@@ -587,14 +583,14 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <span class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide(1)"></span>
-                    <span class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide(2)"></span>
-                    <span class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide(3)"></span>
-                    <span class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide(4)"></span>
-                    <span class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide(5)"></span>
-                    <span class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide(6)"></span>
-                    <span class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide(7)"></span>
-                    
+                    <button class="slideshow-matheson--dot slideshow-dot active" onclick="currentSlide('matheson', 0)"></button>
+                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 1)"></button>
+                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 2)"></button>
+                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 3)"></button>
+                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 4)"></button>
+                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 5)"></button>
+                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 6)"></button>
+
                 </div>
 
 
@@ -637,9 +633,9 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <span class="slideshow-thirdfrate--dot slideshow-dot" onclick="currentSlide(1)"></span>
-                    <span class="slideshow-thirdfrate--dot slideshow-dot" onclick="currentSlide(2)"></span>
-                    <span class="slideshow-thirdfrate--dot slideshow-dot" onclick="currentSlide(3)"></span>
+                    <button class="slideshow-thirdfrate--dot slideshow-dot active" onclick="currentSlide('thirdfrate', 0)"></button>
+                    <button class="slideshow-thirdfrate--dot slideshow-dot" onclick="currentSlide('thirdfrate', 1)"></button>
+                    <button class="slideshow-thirdfrate--dot slideshow-dot" onclick="currentSlide('thirdfrate', 2)"></button>
                 </div>
 
                 
@@ -702,14 +698,14 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(1)"></span>
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(2)"></span>
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(3)"></span>
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(4)"></span>
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(5)"></span>
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(6)"></span>
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(7)"></span>
-                    <span class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide(8)"></span>
+                    <button class="slideshow-specialty--dot slideshow-dot active" onclick="currentSlide('specialty', 0)"></button>
+                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 1)"></button>
+                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 2)"></button>
+                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 3)"></button>
+                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 4)"></button>
+                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 5)"></button>
+                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 6)"></button>
+                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 7)"></button>
                 </div>
                 
                 

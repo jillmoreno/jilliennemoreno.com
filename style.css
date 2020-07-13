@@ -573,9 +573,9 @@ h3 {
 .slideshow-text {
     color: #383a3b;
     font-size: 15px;
-    padding: 8px 12px;
+    padding: 12px;
     position: absolute;
-    bottom: -22px;
+    bottom: -30px;
     width: 100%;
     text-align: center;
 }

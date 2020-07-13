@@ -15,6 +15,10 @@
                         function onTabSelect(e) {
                             e.preventDefault()
 
+                            // Get the target and tab, based on whether the event came from the <a> or the <span> inside of the <a>
+                            const target = e.target.attributes.href ? e.target : e.target.parentElement;
+                            const tab = e.target.attributes.href ? e.target.parentElement : e.target.parentElement.parentElement;
+
                             // Reset currently selected tab to "not selected"
                             const current = document.getElementsByClassName('selected')[0]
                             if (current) {
@@ -22,13 +26,12 @@
                             }
 
                             // Set clicked tab to "selected"
-                            const tab = e.target.parentElement;
                             if (tab) {
                                 tab.classList.add('selected')
                             }
 
                             // Show tab content
-                            const selected = e.target.attributes.href.textContent;
+                            const selected = target.attributes.href.textContent;
                             const tabs = document.getElementsByClassName('tab-content')
                             for (let i = 0; i < tabs.length; i += 1) {
                                 tabs[i].classList.remove('selected')

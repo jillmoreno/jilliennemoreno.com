@@ -223,6 +223,7 @@ footer {
     .tab {
         text-decoration: none;
 
+        height: unset;
         display: flex;
         flex-direction: column;
 

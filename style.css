@@ -312,7 +312,8 @@ h3 {
 
 .icon {
     width: 100px;
-    margin: 10 295;
+    margin: 10px auto;
+    display: block;
 }
 
 @media (min-width: 512px) {

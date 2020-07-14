@@ -1,6 +1,6 @@
 /* https://fonts.google.com/specimen/Open+Sans?query=open+sans#standard-styles */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 
 *,
 *::after,
@@ -29,6 +29,15 @@ header {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: auto;
+
+    /* Mobile */
+    margin-top: 75px;
+}
+
+@media (min-width: 768px) {
+    header {
+        margin-top: 0;
+    }
 }
 
 .header-wrapper {
@@ -106,92 +115,85 @@ footer {
 /** Tabs **/
 
 .tab-list {
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-
-    list-style: none;
-    padding: 0;
-    line-height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
 
     display: flex;
+    width: 100%;
+    height: 75px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    z-index: 999;
 }
 
 .tab-wrapper {
-    display: inline-block;
-    text-align: center;
     flex: 1;
-
-    padding-top: 75px;
-    background-size: 50px;
-    background-position: top center;
-    background-repeat: no-repeat;
+    background-color: #f3f1ee;
 }
 
 .tab {
-    text-transform: uppercase;
+    padding-top: 75px;
+    background-size: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    background-color: 032d3e;
-    line-height: 1em;
-    font-weight: 600;
-    font-size: 14px;
-    border-radius: 15px 15px 0 0;
-    border-top: 2px solid #9b7f65;
-    border-right: 2px solid #9b7f65;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 
-    color: #9b7f65;
-    display: block;
-    text-decoration: none;
-    padding: 10px 10px 5px 10px;
-}
-
-.tab-wrapper:first-child .tab {
-    border-left: 1px solid #4779bd;
+    border-bottom: 5px solid #e3e2df;
 }
 
 .tab-wrapper.selected .tab {
-    background-color: white;
-    color: 05223b;
+    border-bottom: 5px solid #6c8abe;
 }
 
-.tab__recent-projects {
+.tab-text {
+    display: none;
+}
+
+.tab__recent-projects .tab {
     background-image: url("images/server-outline.svg");
 }
 
-.tab__recent-projects.selected {
-    background-image: url("images/server-sharp.svg");
+.tab__recent-projects.selected .tab {
+    background-image: url("images/server-sharp--mobile.svg");
 }
 
-.tab__ui-ux-process {
+.tab__ui-ux-process .tab {
     background-image: url("images/git-compare-outline.svg");
 }
 
-.tab__ui-ux-process.selected {
-    background-image: url("images/git-compare-sharp.svg");
+.tab__ui-ux-process.selected .tab {
+    background-image: url("images/git-compare-sharp--mobile.svg");
 }
 
-.tab__testimonials {
+.tab__testimonials .tab {
     background-image: url("images/chatbubbles-outline.svg");
 }
 
-.tab__testimonials.selected {
-    background-image: url("images/chatbubbles-sharp.svg");
+.tab__testimonials.selected .tab {
+    background-image: url("images/chatbubbles-sharp--mobile.svg");
 }
 
-.tab__my-work {
+.tab__my-work .tab {
     background-image: url("images/folder-outline.svg");
 }
 
-.tab__my-work.selected {
-    background-image: url("images/folder-sharp.svg");
+.tab__my-work.selected .tab {
+    background-image: url("images/folder-sharp--mobile.svg");
 }
 
-.tab__about-me {
+.tab__about-me .tab {
     background-image: url("images/finger-print-outline.svg");
 }
 
-.tab__about-me.selected {
-    background-image: url("images/finger-print-sharp.svg");
+.tab__about-me.selected .tab {
+    background-image: url("images/finger-print-sharp--mobile.svg");
 }
 
 .tab-content {
@@ -200,6 +202,86 @@ footer {
 
 .tab-content.selected {
     display: block;
+}
+
+@media (min-width: 768px) {
+    .tab-list {
+        max-width: 980px;
+        margin: 0 auto;
+
+        line-height: 30px;
+
+        height: unset;
+        position: relative;
+    }
+
+    .tab-wrapper {
+        background-color: unset;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .tab {
+        text-decoration: none;
+
+        height: unset;
+        display: flex;
+        flex-direction: column;
+
+        background-position: top center;
+        border: none;
+    }
+
+    .tab-text {
+        text-transform: uppercase;
+
+        background-color: #032d3e;
+        line-height: 1em;
+        font-weight: 600;
+        font-size: 14px;
+        border-radius: 15px 15px 0 0;
+        border-top: 2px solid #9b7f65;
+        border-right: 2px solid #9b7f65;
+
+        color: #9b7f65;
+        display: block;
+        padding: 10px 10px 5px 10px;
+
+        flex: 1;
+    }
+
+    .tab-wrapper:first-child .tab-text {
+        border-left: 1px solid #4779bd;
+    }
+
+    .tab-wrapper.selected .tab {
+        border: none;
+    }
+
+    .tab-wrapper.selected .tab-text {
+        background-color: white;
+        color: #05223b;
+    }
+
+    .tab__recent-projects.selected .tab {
+        background-image: url("images/server-sharp.svg");
+    }
+
+    .tab__ui-ux-process.selected .tab {
+        background-image: url("images/git-compare-sharp.svg");
+    }
+
+    .tab__testimonials.selected .tab {
+        background-image: url("images/chatbubbles-sharp.svg");
+    }
+
+    .tab__my-work.selected .tab {
+        background-image: url("images/folder-sharp.svg");
+    }
+
+    .tab__about-me.selected .tab {
+        background-image: url("images/finger-print-sharp.svg");
+    }
 }
 
 /** Content **/

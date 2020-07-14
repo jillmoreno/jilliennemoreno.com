@@ -18,6 +18,11 @@
             function onTabSelect(e) {
                 e.preventDefault()
 
+
+                // Get the target and tab, based on whether the event came from the <a> or the <span> inside of the <a>
+                const target = e.target.attributes.href ? e.target : e.target.parentElement;
+                const tab = e.target.attributes.href ? e.target.parentElement : e.target.parentElement.parentElement;
+
                 // Reset currently selected tab to "not selected"
                 const current = document.getElementsByClassName('selected')[0]
                 if (current) {
@@ -25,13 +30,12 @@
                 }
 
                 // Set clicked tab to "selected"
-                const tab = e.target.parentElement;
                 if (tab) {
                     tab.classList.add('selected')
                 }
 
                 // Show tab content
-                const selected = e.target.attributes.href.textContent;
+                const selected = target.attributes.href.textContent;
                 const tabs = document.getElementsByClassName('tab-content')
                 for (let i = 0; i < tabs.length; i += 1) {
                     tabs[i].classList.remove('selected')
@@ -108,19 +112,29 @@
             <nav>
                 <ul class="tab-list">
                     <li class="tab-wrapper tab__recent-projects selected">
-                        <a href="#recent-projects" class="tab">Check out my recent projects</a>
+                        <a href="#recent-projects" class="tab"
+                            ><span class="tab-text">Check out my recent projects</span></a
+                        >
                     </li>
                     <li class="tab-wrapper tab__ui-ux-process">
-                        <a href="#ui-ux-process" class="tab">Take a glimpse at my UI/UX process</a>
+                        <a href="#ui-ux-process" class="tab"
+                            ><span class="tab-text">Take a glimpse at my UI/UX process</span></a
+                        >
                     </li>
                     <li class="tab-wrapper tab__testimonials">
-                        <a href="#testimonials" class="tab">Read testimonials from team members</a>
+                        <a href="#testimonials" class="tab"
+                            ><span class="tab-text">Read testimonials from team members</span></a
+                        >
                     </li>
                     <li class="tab-wrapper tab__my-work">
-                        <a href="#my-work" class="tab">See additional examples of my work</a>
+                        <a href="#my-work" class="tab"
+                            ><span class="tab-text">See additional examples of my work</span></a
+                        >
                     </li>
                     <li class="tab-wrapper tab__about-me">
-                        <a href="#about-me" class="tab">Find out a little bit more about me</a>
+                        <a href="#about-me" class="tab"
+                            ><span class="tab-text">Find out a little bit more about me</span></a
+                        >
                     </li>
                 </ul>
             </nav>
@@ -517,17 +531,50 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <button class="slideshow-encompass--dot slideshow-dot active" onclick="currentSlide('encompass', 0)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 1)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 2)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 3)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 4)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 5)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 6)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 7)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 8)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 9)"></button>
-                    <button class="slideshow-encompass--dot slideshow-dot" onclick="currentSlide('encompass', 10)"></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot active"
+                        onclick="currentSlide('encompass', 0)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 1)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 2)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 3)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 4)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 5)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 6)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 7)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 8)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 9)"
+                    ></button>
+                    <button
+                        class="slideshow-encompass--dot slideshow-dot"
+                        onclick="currentSlide('encompass', 10)"
+                    ></button>
                 </div>
 
                 <div class="work-wrapper">
@@ -545,11 +592,11 @@
                 </div>
 
                 <div class="slideshow-container">
-                     <div class="slideshow-matheson--slide slideshow-slide fade active">
+                    <div class="slideshow-matheson--slide slideshow-slide fade active">
                         <img src="images/lmm/Promoitems.jpg" style="width: 100%;" />
                         <div class="slideshow-text">Business Card & Brochure</div>
                     </div>
-                     <div class="slideshow-matheson--slide slideshow-slide fade">
+                    <div class="slideshow-matheson--slide slideshow-slide fade">
                         <img src="images/lmm/original-website.jpg" style="width: 100%;" />
                         <div class="slideshow-text">Original Website</div>
                     </div>
@@ -574,7 +621,6 @@
                         <div class="slideshow-text">Redesigned Website - Contact</div>
                     </div>
 
-                   
                     <!-- Next and previous buttons -->
                     <a class="slideshow-prev" onclick="plusSlides('matheson', -1)">&#10094;</a>
                     <a class="slideshow-next" onclick="plusSlides('matheson', 1)">&#10095;</a>
@@ -583,16 +629,35 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <button class="slideshow-matheson--dot slideshow-dot active" onclick="currentSlide('matheson', 0)"></button>
-                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 1)"></button>
-                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 2)"></button>
-                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 3)"></button>
-                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 4)"></button>
-                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 5)"></button>
-                    <button class="slideshow-matheson--dot slideshow-dot" onclick="currentSlide('matheson', 6)"></button>
-
+                    <button
+                        class="slideshow-matheson--dot slideshow-dot active"
+                        onclick="currentSlide('matheson', 0)"
+                    ></button>
+                    <button
+                        class="slideshow-matheson--dot slideshow-dot"
+                        onclick="currentSlide('matheson', 1)"
+                    ></button>
+                    <button
+                        class="slideshow-matheson--dot slideshow-dot"
+                        onclick="currentSlide('matheson', 2)"
+                    ></button>
+                    <button
+                        class="slideshow-matheson--dot slideshow-dot"
+                        onclick="currentSlide('matheson', 3)"
+                    ></button>
+                    <button
+                        class="slideshow-matheson--dot slideshow-dot"
+                        onclick="currentSlide('matheson', 4)"
+                    ></button>
+                    <button
+                        class="slideshow-matheson--dot slideshow-dot"
+                        onclick="currentSlide('matheson', 5)"
+                    ></button>
+                    <button
+                        class="slideshow-matheson--dot slideshow-dot"
+                        onclick="currentSlide('matheson', 6)"
+                    ></button>
                 </div>
-
 
                 <div class="work-wrapper">
                     <div class="logo">
@@ -608,7 +673,7 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="slideshow-container">
                     <div class="slideshow-thirdfrate--slide slideshow-slide fade active">
                         <img src="images/thirdfrate/mailerview.jpg" style="width: 100%;" />
@@ -624,7 +689,7 @@
                         <img src="images/thirdfrate/TFopen2.jpg" style="width: 100%;" />
                         <div class="slideshow-text">Back</div>
                     </div>
-                    
+
                     <!-- Next and previous buttons -->
                     <a class="slideshow-prev" onclick="plusSlides('thirdfrate', -1)">&#10094;</a>
                     <a class="slideshow-next" onclick="plusSlides('thirdfrate', 1)">&#10095;</a>
@@ -633,12 +698,19 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <button class="slideshow-thirdfrate--dot slideshow-dot active" onclick="currentSlide('thirdfrate', 0)"></button>
-                    <button class="slideshow-thirdfrate--dot slideshow-dot" onclick="currentSlide('thirdfrate', 1)"></button>
-                    <button class="slideshow-thirdfrate--dot slideshow-dot" onclick="currentSlide('thirdfrate', 2)"></button>
+                    <button
+                        class="slideshow-thirdfrate--dot slideshow-dot active"
+                        onclick="currentSlide('thirdfrate', 0)"
+                    ></button>
+                    <button
+                        class="slideshow-thirdfrate--dot slideshow-dot"
+                        onclick="currentSlide('thirdfrate', 1)"
+                    ></button>
+                    <button
+                        class="slideshow-thirdfrate--dot slideshow-dot"
+                        onclick="currentSlide('thirdfrate', 2)"
+                    ></button>
                 </div>
-
-                
 
                 <div class="work-wrapper">
                     <div class="logo">
@@ -654,13 +726,13 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="slideshow-container">
-                     <div class="slideshow-specialty--slide slideshow-slide fade active">
+                    <div class="slideshow-specialty--slide slideshow-slide fade active">
                         <img src="images/Specialty/eagle.jpg" style="width: 100%;" />
                         <div class="slideshow-text">Eagle Mascot</div>
                     </div>
-                     <div class="slideshow-specialty--slide slideshow-slide fade">
+                    <div class="slideshow-specialty--slide slideshow-slide fade">
                         <img src="images/Specialty/tiger.jpg" style="width: 100%;" />
                         <div class="slideshow-text">Tiger Mascot</div>
                     </div>
@@ -684,12 +756,11 @@
                         <img src="images/Specialty/knights.jpg" style="width: 100%;" />
                         <div class="slideshow-text">Knights Mascot</div>
                     </div>
-                      <div class="slideshow-specialty--slide slideshow-slide fade">
+                    <div class="slideshow-specialty--slide slideshow-slide fade">
                         <img src="images/Specialty/bulldog.jpg" style="width: 100%;" />
                         <div class="slideshow-text">Bulldog Mascot</div>
                     </div>
 
-                   
                     <!-- Next and previous buttons -->
                     <a class="slideshow-prev" onclick="plusSlides('specialty', -1)">&#10094;</a>
                     <a class="slideshow-next" onclick="plusSlides('specialty', 1)">&#10095;</a>
@@ -698,18 +769,39 @@
 
                 <!-- The dots/circles -->
                 <div class="slideshow-dots">
-                    <button class="slideshow-specialty--dot slideshow-dot active" onclick="currentSlide('specialty', 0)"></button>
-                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 1)"></button>
-                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 2)"></button>
-                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 3)"></button>
-                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 4)"></button>
-                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 5)"></button>
-                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 6)"></button>
-                    <button class="slideshow-specialty--dot slideshow-dot" onclick="currentSlide('specialty', 7)"></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot active"
+                        onclick="currentSlide('specialty', 0)"
+                    ></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot"
+                        onclick="currentSlide('specialty', 1)"
+                    ></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot"
+                        onclick="currentSlide('specialty', 2)"
+                    ></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot"
+                        onclick="currentSlide('specialty', 3)"
+                    ></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot"
+                        onclick="currentSlide('specialty', 4)"
+                    ></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot"
+                        onclick="currentSlide('specialty', 5)"
+                    ></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot"
+                        onclick="currentSlide('specialty', 6)"
+                    ></button>
+                    <button
+                        class="slideshow-specialty--dot slideshow-dot"
+                        onclick="currentSlide('specialty', 7)"
+                    ></button>
                 </div>
-                
-                
-                
             </section>
 
             <section id="about-me" class="tab-content">

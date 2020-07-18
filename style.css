@@ -25,10 +25,9 @@ p {
 /** Header **/
 
 header {
-    background-image: url("images/hero2.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: auto;
+    background-image: url("images/header-background.jpg");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
 
     /* Mobile */
     margin-top: 75px;
@@ -37,6 +36,10 @@ header {
 @media (min-width: 768px) {
     header {
         margin-top: 0;
+    }
+
+    nav {
+        background-color: #012c3d;
     }
 }
 

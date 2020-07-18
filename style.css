@@ -1,5 +1,7 @@
 /* https://fonts.google.com/specimen/Open+Sans?query=open+sans#standard-styles */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+/* https://fonts.google.com/specimen/Architects+Daughter?query=arch&sidebar.open&selection.family=Architects+Daughter */
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 
 *,
@@ -72,7 +74,7 @@ header {
     font-weight: 500;
     margin-left: 10px;
     margin-right: 10px;
-    font-family: architects daughter;
+    font-family: "Architects Daughter", cursive;
 }
 
 /** Footer **/

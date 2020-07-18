@@ -591,7 +591,7 @@ h3 {
     color: #9b7f65;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 768px) {
     .fun-fact-list {
         width: 512px;
         height: 512px;

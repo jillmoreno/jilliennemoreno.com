@@ -531,68 +531,128 @@ h3 {
 /** Fun Facts **/
 
 .fun-fact-list {
-    width: min(100vw, 512px);
-    height: min(100vw, 512px);
-    border-radius: 50%;
-    border-style: dashed;
-    border-width: 3px;
-    border-color: #4779bd;
-    position: relative;
     margin: 50px auto;
-
     padding: 0;
     list-style: none;
+    position: relative;
+
+    width: 100%;
+    max-width: 512px;
+}
+
+.fun-fact-list::after {
+    content: "";
 
     background-image: url("images/earth.svg");
     background-position: center center;
-    background-size: 50%;
+    background-size: 75%;
     background-repeat: no-repeat;
+
+    opacity: 0.2;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: -2;
 }
 
 .fun-fact {
-    position: absolute;
-    left: calc(50% - 100px);
-
-    background: white;
-    color: #5b4129;
     text-align: center;
-    width: 200px;
+    width: 100%;
+    max-width: 384px;
     padding: 10px;
-    font-size: 12px;
+    margin: 30px auto;
 }
 
-/* Bottom Half */
 .fun-fact:nth-child(1) {
-    bottom: calc(50% - 40px);
-    transform: rotate(30deg) translate(min(50vw, 256px)) rotate(-30deg);
     color: #723d46;
 }
+
 .fun-fact:nth-child(2) {
-    bottom: calc(50% - 40px);
-    transform: rotate(90deg) translate(min(50vw, 256px)) rotate(-90deg);
     color: #55828b;
 }
+
 .fun-fact:nth-child(3) {
-    bottom: calc(50% - 40px);
-    transform: rotate(150deg) translate(min(50vw, 256px)) rotate(-150deg);
     color: #9b7f65;
 }
 
-/* Top Half */
 .fun-fact:nth-child(4) {
-    top: calc(50% - 40px);
-    transform: rotate(210deg) translate(min(50vw, 256px)) rotate(-210deg);
     color: #723d46;
 }
+
 .fun-fact:nth-child(5) {
-    top: calc(50% - 40px);
-    transform: rotate(270deg) translate(min(50vw, 256px)) rotate(-270deg);
     color: #55828b;
 }
+
 .fun-fact:nth-child(6) {
-    top: calc(50% - 40px);
-    transform: rotate(330deg) translate(min(50vw, 256px)) rotate(-330deg);
     color: #9b7f65;
+}
+
+@media (min-width: 980px) {
+    .fun-fact-list {
+        width: 512px;
+        height: 512px;
+        border-radius: 50%;
+        border-style: dashed;
+        border-width: 3px;
+        border-color: #4779bd;
+        position: relative;
+    }
+
+    .fun-fact-list::before {
+        content: unset;
+    }
+
+    .fun-fact-list::after {
+        opacity: 1;
+        background-size: 50%;
+    }
+
+    .fun-fact {
+        position: absolute;
+        left: calc(50% - 100px);
+
+        background: white;
+        text-align: center;
+        width: 200px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    /* Bottom Half */
+    .fun-fact:nth-child(1) {
+        bottom: calc(50% - 40px);
+        transform: rotate(30deg) translate(256px) rotate(-30deg);
+    }
+
+    .fun-fact:nth-child(2) {
+        bottom: calc(50% - 40px);
+        transform: rotate(90deg) translate(256px) rotate(-90deg);
+    }
+
+    .fun-fact:nth-child(3) {
+        bottom: calc(50% - 40px);
+        transform: rotate(150deg) translate(256px) rotate(-150deg);
+    }
+
+    /* Top Half */
+    .fun-fact:nth-child(4) {
+        top: calc(50% - 40px);
+        transform: rotate(210deg) translate(256px) rotate(-210deg);
+    }
+
+    .fun-fact:nth-child(5) {
+        top: calc(50% - 40px);
+        transform: rotate(270deg) translate(256px) rotate(-270deg);
+    }
+
+    .fun-fact:nth-child(6) {
+        top: calc(50% - 40px);
+        transform: rotate(330deg) translate(256px) rotate(-330deg);
+    }
 }
 
 /** Construction Styles **/
